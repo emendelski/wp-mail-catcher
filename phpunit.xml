@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+	Runs without WordPress: Brain Monkey stubs the WordPress calls and
+	tests/bootstrap.php loads the plugin's pure helpers, settings getters and
+	capture hooks. store.php ($wpdb) and the admin screens are left out; the
+	tests stub fmc_store_*() instead.
+-->
+<phpunit
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+	bootstrap="tests/bootstrap.php"
+	colors="true"
+	failOnWarning="true"
+	failOnNotice="true"
+	beStrictAboutOutputDuringTests="true"
+	cacheDirectory=".phpunit.cache"
+	>
+	<testsuites>
+		<testsuite name="mail-catcher">
+			<directory>tests</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
